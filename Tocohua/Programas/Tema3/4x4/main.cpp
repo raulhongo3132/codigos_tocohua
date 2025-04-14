@@ -1,0 +1,101 @@
+#include <iostream>
+#include <locale.h>
+#include <math.h>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL,"");
+	cout<<endl<<"=================================================================================="<<endl;
+	cout<<endl<<"\t\tDeterminante 3x3";
+	cout<<endl<<"\t\t5. Valverde Palacios Raúl Miguel";
+	cout<<endl<<"\t\t6. 231080023";
+	cout<<endl<<"\t\tIngeniería en Sistemas Computacionales";
+	cout<<endl<<"\t\tIng. Rene Tocohua Rojas";
+	cout<<endl<<"\t\tTecnológico  Nacional de México";
+	cout<<endl<<"\t\tInstituto Tecnólogico de Iztapalapa";
+	cout<<endl<<endl<<"=================================================================================="<<endl;
+	float a11,a12,a13,a14,a21,a22,a23,a24,a31,a32,a33,a34,a41,a42,a43,a44,b1,b2,b3,b4,deta,detax1,detax2,detax3,detax4;
+	float x1,x2,x3,x4;
+	cout<<endl<<endl<<"\t\tPrograma que resuelve un sstema lineal de 4 ecuaciones con 4 incognitas (4 X 4)....";
+	cout<<endl<<endl<<"\t\tpor el metodo de determinantes basado en la regla de Cramer";
+	cout<<endl<<endl<<"\t\tA partir de la forma general estandar."<<endl<<endl;
+	cout<<endl<<endl<<"=================================================================================="<<endl;
+	cout<<endl<<endl<<"\t\tLa forma estandar de 3x3 es:";
+	cout<<endl<<endl<<"\t\ta11x1 + a12x2 + a13x3 + a14x4 = b1 --- (1)";
+	cout<<endl<<endl<<"\t\ta21x1 + a22x2 + a23x3 + a24x4 = b2 --- (2)";
+	cout<<endl<<endl<<"\t\ta31x1 + a22x2 + a33x3 + a34x4 = b3 --- (3)";
+	cout<<endl<<endl<<"\t\ta41x1 + a42x2 + a43x3 + a44x4 = b4 --- (4)";
+	cout<<endl<<endl;
+	
+	cout<<endl<<"Para la ecuación #1: ";
+	cout<<endl<<"Ingrese el valor de a11: ";
+	cin>>a11;
+	cout<<endl<<"Ingrese el valor de a12: ";
+	cin>>a12;
+	cout<<endl<<"Ingrese el valor de a13: ";
+	cin>>a13;
+	cout<<endl<<"Ingrese el valor de a14: ";
+	cin>>a14;
+	cout<<endl<<"Ingrese el valor de b1: ";
+	cin>>b1;
+	cout<<endl<<"Para la ecuación #2: ";
+	cout<<endl<<"Ingrese el valor de a21: ";
+	cin>>a21;
+	cout<<endl<<"Ingrese el valor de a22: ";
+	cin>>a22;
+	cout<<endl<<"Ingrese el valor de a23: ";
+	cin>>a23;
+	cout<<endl<<"Ingrese el valor de a24: ";
+	cin>>a24;
+	cout<<endl<<"Ingrese el valor de b2: ";
+	cin>>b2;
+	cout<<endl<<"Para la ecuación #3: ";
+	cout<<endl<<"Ingrese el valor de a31: ";
+	cin>>a31;
+	cout<<endl<<"Ingrese el valor de a32: ";
+	cin>>a32;
+	cout<<endl<<"Ingrese el valor de a33: ";
+	cin>>a33;
+	cout<<endl<<"Ingrese el valor de a34: ";
+	cin>>a34;
+	cout<<endl<<"Ingrese el valor de b3: ";
+	cin>>b3;
+	cout<<endl<<"Para la ecuación #4: ";
+	cout<<endl<<"Ingrese el valor de a41: ";
+	cin>>a41;
+	cout<<endl<<"Ingrese el valor de a42: ";
+	cin>>a42;
+	cout<<endl<<"Ingrese el valor de a43: ";
+	cin>>a43;
+	cout<<endl<<"Ingrese el valor de a44: ";
+	cin>>a44;
+	cout<<endl<<"Ingrese el valor de b3: ";
+	cin>>b4;
+	cout<<endl<<endl<<"El sistemas de ecuaciones es: ";
+	
+	cout<<endl<<"\t\t"<<a11<<"x1 + "<<a12<<"x2 + "<<a13<<"x3 = "<<a14<<"x4 = "<<b1<<" --- (1)";
+	cout<<endl<<"\t\t"<<a21<<"x1 + "<<a22<<"x2 + "<<a23<<"x3 = "<<a24<<"x4 = "<<b2<<" --- (2)";
+	cout<<endl<<"\t\t"<<a31<<"x1 + "<<a32<<"x2 + "<<a33<<"x3 = "<<a34<<"x4 = "<<b3<<" --- (3)";
+	cout<<endl<<"\t\t"<<a41<<"x1 + "<<a42<<"x2 + "<<a43<<"x3 = "<<a44<<"x4 = "<<b4<<" --- (4)";
+		
+	deta=((a11*a22-a21*a12)*(a11*a33-a31*a13)*(a11*a44-a41*a14)+(a11*a23-a21*a13)*(a11*a34-a31*a14)*(a11*a42-a41*a12)+(a11*a24-a21*a14)*(a11*a32-a31*a12)*(a11*a43-a41*a13))-((a11*a42-a41*a12)*(a11*a33-a31*a13)*(a11*a24-a21*a14)+(a11*a43-a41*a13)*(a11*a34-a31*a14)*(a11*a22-a21*a12)+(a11*a44-a41*a14)*(a11*a32-a31*a12)*(a11*a23-a21*a13));
+	deta=pow(-1,1-1)*(1/pow(a11,4-2))*deta;
+	detax1=((b1*a22-b2*a12)*(b1*a33-b3*a13)*(b1*a44-b4*a14)+(b1*a23-b2*a13)*(b1*a34-b3*a14)*(a11*a42-a41*a12)+(b1*a24-b2*a14)*(a11*a32-a31*a12)*(a11*a43-a41*a13))-((b1*a42-b4*a12)*(b1*a33-b3*a13)*(b1*a24-b2*a14)+(b1*a43-b4*a13)*(b1*a34-b3*a14)*(a11*a22-a21*a12)+(b1*a44-b4*a14)*(a11*a32-a31*a12)*(a11*a23-a21*a13));
+	detax1=pow(-1,1-1)*(1/pow(b1,4-2))*detax1;
+	detax2=((a11*b2-a21*b1)*(a11*a33-a31*a13)*(a11*a44-a41*a14)+(a11*a23-a21*a13)*(a11*a34-a31*a14)*(a11*a42-a41*a12)+(a11*a24-a21*a14)*(a11*a32-a31*a12)*(a11*a43-a41*a13))-((a11*b4-a41*b1)*(a11*a33-a31*a13)*(a11*a24-a21*a14)+(a11*a43-a41*a13)*(a11*a34-a31*a14)*(a11*a22-a21*a12)+(a11*a44-a41*a14)*(a11*a32-a31*a12)*(a11*a23-a21*a13));
+	detax2=pow(-1,1-1)*(1/pow(a11,4-2))*detax2;
+	detax3=((a11*a22-a21*a12)*(a11*b3-a31*b1)*(a11*a44-a41*a14)+(a11*b2-a21*b1)*(a11*a34-a31*a14)*(a11*a42-a41*a12)+(a11*a24-a21*a14)*(a11*a32-a31*a12)*(a11*a43-a41*a13))-((a11*a42-a41*a12)*(a11*b3-a31*b1)*(a11*a24-a21*a14)+(a11*b4-a41*b1)*(a11*a34-a31*a14)*(a11*a22-a21*a12)+(a11*a44-a41*a14)*(a11*a32-a31*a12)*(a11*a23-a21*a13));
+	detax3=pow(-1,1-1)*(1/pow(a11,4-2))*detax3;
+	detax4=((a11*a22-a21*a12)*(a11*a33-a31*a13)*(a11*b4-a41*b1)+(a11*a23-a21*a13)*(a11*b3-a31*b1)*(a11*a42-a41*a12)+(a11*b2-a21*b1)*(a11*a32-a31*a12)*(a11*a43-a41*a13))-((a11*a42-a41*a12)*(a11*a33-a31*a13)*(a11*b2-a21*b1)+(a11*a43-a41*a13)*(a11*b3-a31*b1)*(a11*a22-a21*a12)+(a11*b4-a41*b1)*(a11*a32-a31*a12)*(a11*a23-a21*a13));
+	detax4=pow(-1,1-1)*(1/pow(a11,4-2))*detax4;
+	cout<<endl<<endl<<"La determinante de a es: "<<deta;
+	cout<<endl<<endl<<"La determinante de ax1 es: "<<detax1;
+	cout<<endl<<endl<<"La determinante de ax2 es: "<<detax2;
+	cout<<endl<<endl<<"La determinante de ax3 es: "<<detax3;
+	cout<<endl<<endl<<"La determinante de ax4 es: "<<detax4;
+	cout<<endl<<endl<<"X1= : "<<detax1/deta;
+	cout<<endl<<endl<<"X2= : "<<detax2/deta;
+	cout<<endl<<endl<<"X3= : "<<detax3/deta;
+	cout<<endl<<endl<<"X4= : "<<detax4/deta;
+	return 0;
+}
